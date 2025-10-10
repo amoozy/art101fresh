@@ -1,0 +1,11 @@
+
+#ratgirl{width:50%;max-width:400px;}
+p{color:rgb(24, 4, 62);font-family: 'Courier New', Courier, monospace;}
+h2{color:rgb(5, 71, 70);font-family: 'Courier New', Courier, monospace;}
+h1{color:rgb(48, 3, 47);font-family: 'Courier New', Courier, monospace;}
+li{color: rgb(16, 25, 85);font-family: 'Courier New', Courier, monospace;}
+body{background-color:rgb(183, 161, 197)}
+
+#introduction h2{font-style: oblique;}
+#introduction p{font-weight: bold;}
+

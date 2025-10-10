@@ -1,0 +1,8 @@
+.test-div {padding: 10px; margin: 10px; background: rgb(253, 213, 138)}
+
+.test-div h2{color: rgb(22, 22, 103);}
+.test-div:hover{background-color:rgb(183, 119, 242)}
+button.special{background-color: rgb(245, 202, 202);}
+h2{color:rgb(96, 122, 199)}
+.my-flex{display: flex;}
+.love{display: column}
