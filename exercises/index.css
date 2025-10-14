@@ -8,4 +8,4 @@ body{background-color:rgb(183, 161, 197)}
 
 #introduction h2{font-style: oblique;}
 #introduction p{font-weight: bold;}
-
+.navigation{display:flex;gap: 20px;}
