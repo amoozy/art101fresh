@@ -1,0 +1,39 @@
+
+body{background-image: url('images/darkforest.jpg');background-size: auto;background-repeat: no-repeat;min-height: 200vh;}
+p{color:rgb(3, 49, 18);
+    font-family: 'Courier New', Courier, monospace;
+background: whitesmoke;
+text-align: center;}
+h1{color:rgb(3, 48, 16);
+    font-family: 'Courier New', Courier, monospace;
+background: whitesmoke;
+text-align: center;}
+
+#fullmoon {
+  position: absolute;
+  top: 400px;
+  left: 900px;
+  z-index: 10;
+  max-width: 300px;
+}
+#raven {
+  position: absolute;
+  top: 800px;
+  left: 100px;
+  z-index: 10;
+  max-width: 900px;
+
+
+}
+
+#bite-button {
+  position: relative;
+  z-index: 1000;
+  background-color: rgb(62, 7, 62);
+  color: rgb(245, 245, 245);
+  padding: 10px 20px;
+  font-size: 16px;
+  left: 600px
+
+
+}
