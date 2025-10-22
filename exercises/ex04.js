@@ -8,5 +8,6 @@ $("#needy-button").click( function() {
 
    $("body").css("background-color",colors[count]);
   count = count + 1; 
+ 
 });
 
