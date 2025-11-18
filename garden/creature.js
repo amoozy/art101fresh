@@ -12,4 +12,19 @@ $("#add-creature").click(
     $("#creature-name").val("");
 });
 
+
+      
+$("#clear-creatures").click(function() {
+
+  // trigger a quick shake animation on the form for feedback
+  $("#creature-form").addClass("shake").one("animationend webkitAnimationEnd", function() {
+    $(this).removeClass("shake");
+  });
+
+  // clear the list and reset the input
+  $("#creature-list").html(" Creatures list will be here: ");
+  $("#creature-name").val("").focus();
+
+});
+
 //the magic move
