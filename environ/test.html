@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Your Own Emoji</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="test.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>Build Your Own Emoji</h1>
+    </header>
+
+    <main id="emoji-builder">
+
+
+        <section id="emoji-preview">
+            <div id="emoji-face-shape" class="feature-layer"></div>
+            <div id="emoji-eyes" class="feature-layer"></div>
+            <div id="emoji-nose" class="feature-layer"></div>
+            <div id="emoji-mouth" class="feature-layer"></div>
+        </section>
+
+        <!-- Controls -->
+        <section id="feature-controls">
+
+            <!-- Face Shape -->
+            <div class="control-group" data-feature="face-shape">
+                <h2>Face Shape</h2>
+                <button class="arrow left-arrow" data-direction="prev">←</button>
+                <div class="feature-display" id="face-shape-display">
+
+                </div>
+                <button class="arrow right-arrow" data-direction="next">→</button>
+            </div>
+
+            <!-- Eyes -->
+            <div class="control-group" data-feature="eyes">
+                <h2>Eyes</h2>
+                <div class="feature-display" id="eyes-display">
+                    <img id="eyes1" src="images/eyes1.png">
+                    <img id="eyes2" src="images/eyes2.png">
+                    <img id="eyes3" src="images/eyes3.png">
+                    <img id="eyes4" src="images/eyes4.png">
+                </div>
+                <button class="arrow left-arrow" data-direction="prev">←</button>
+                <button class="arrow right-arrow" data-direction="next">→</button>
+            </div>
+
+            <!-- Nose -->
+            <div class="control-group" data-feature="nose">
+                <h2>Nose</h2>
+                <div class="feature-display" id="nose-display">
+                    <img id="nose1" src="images/nose1.png">
+                    <img id="nose2" src="images/nose2.png">
+                    <img id="nose3" src="images/nose3.png">
+                    <img id="nose4" src="images/nose4.png">
+                </div>
+                <button class="arrow left-arrow" data-direction="prev">←</button>
+                <button class="arrow right-arrow" data-direction="next">→</button>
+            </div>
+
+            <!-- Mouth -->
+            <div class="control-group" data-feature="mouth">
+                <h2>Mouth</h2>
+                <div class="feature-display" id="mouth-display">
+                    <img id="mouth1" src="images/mouth1.png">
+                    <img id="mouth2" src="images/mouth2.png">
+                    <img id="mouth3" src="images/mouth3.png">
+                    <img id="mouth4" src="images/mouth4.png">
+                </div>
+                <button class="arrow left-arrow" data-direction="prev">←</button>
+                <button class="arrow right-arrow" data-direction="next">→</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="test.js"></script>
+
+</body>
+
+</html>

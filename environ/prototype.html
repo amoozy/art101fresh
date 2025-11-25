@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>DIY Emoji</title>
+    <link rel="stylesheet" href="prototype.css">
+    <!-- if you’re using jQuery in class -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <h1>Build Your Own Emoji</h1>
+
+    <div id="emoji">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+        <div class="mouth"></div>
+        <div class="accessory"></div>
+      </div>
+    </div>
+
+    <section id="controls">
+      <h2>Eyes</h2>
+      <button class="eyes-option" data-eyes="happy">Happy</button>
+      <button class="eyes-option" data-eyes="angry">Angry</button>
+      <button class="eyes-option" data-eyes="sad">Sad</button>
+
+      <h2>Mouth</h2>
+      <button class="mouth-option" data-mouth="smile">Smile</button>
+      <button class="mouth-option" data-mouth="surprised">Surprised</button>
+      <button class="mouth-option" data-mouth="frown">Frown</button>
+
+      <h2>Extras</h2>
+      <button class="acc-option" data-accessory="none">None</button>
+      <button class="acc-option" data-accessory="glasses">Glasses</button>
+      <button class="acc-option" data-accessory="hat">Hat</button>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

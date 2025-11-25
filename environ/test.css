@@ -1,0 +1,62 @@
+/* feature image sizing for the emoji builder
+	 All eyes, nose, and mouth images will use the same square size.
+	 Tweak --feature-img-size at the top to change size project-wide.
+*/
+
+:root {
+	--feature-img-size: 80px; /* change this to 60px / 100px etc. */
+}
+
+/* Apply consistent size to images in control displays */
+.feature-display img {
+	width: var(--feature-img-size);
+	height: var(--feature-img-size);
+	object-fit: contain; /* preserve aspect ratio inside the square */
+	display: none; /* only .active will be visible */
+}
+
+/* visible image uses the .active class instead of inline style */
+.feature-display img.active {
+	display: block;
+}
+
+/* Also ensure any preview-layer images scale the same */
+#emoji-preview .feature-layer img {
+	width: var(--feature-img-size);
+	height: var(--feature-img-size);
+	object-fit: contain;
+}
+
+/* convenience: show images in the control group when no JS is running */
+.feature-display img[style] {
+	/* backwards-compat: if inline style exists, ensure it still shows */
+	display: block !important;
+}
+
+/* small spacing so multiple eyes/nose pieces align nicely */
+.feature-display { display:flex; gap:8px; align-items:center; }
+
+#emoji-preview {
+    position: relative;
+    width: 300px;        /* or any size you like */
+    height: 300px;
+    margin: 0 auto;
+}
+
+#emoji-preview {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.feature-layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#emoji-face-shape { top: 0; }
+#emoji-eyes       { top: 95px; }   /* adjust this */
+#emoji-nose       { top: 150px; }  /* adjust this */
+#emoji-mouth      { top: 210px; }  /* adjust this */

@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-<!-- All techy stuff goes here, inside HEAD -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Overall title of your page -->
-<title>Empty Template</title>
-<!-- Link to external CSS file -->
- <link rel="stylesheet" href="creature.css">
-<!-- jQuery library -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<!-- Link to external JavaScript file -->
- <script src="creature.js" DEFER></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Template</title>
+
+    <link rel="stylesheet" href="creature.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="creature.js" defer></script>
 </head>
 
 <body>
-<!-- Main content goes here, inside BODY -->
-<h1> Creature Garden </h1>
+    <h1> Creatures Garden </h1>
 
-<div id="creature-form">
-   <h2> Add a creature </h2>
-   <input type="text" id="creature-name" placeholder="Creature name">
-   <button id="add-creature">Let it roam!</button>
-   <button id="clear-creatures">Clear</button>
-</div>
+    <div id="creature-form">
+        <h2>Add a creature</h2>
 
-<div id="creature-list"> Creature list: </div>
+        <div>Name: <input id="crName" type="text" maxlength="10"></div>
+        <div>Color: <input id="crColor" type="color"></div>
+        <div>Number of eyes: <input id="crEyesNum" type="number" max="5" min="0"></div>
+        <div><input type="checkbox" id="crRandom" value=""> <label for="crRandom">Randomize!</label></div>
+        <button id="add-creature">Let it roam!</button>
+    </div>
+
+    <div id="creature-list">Creatures list will be there: </div>
+
 
 </body>
 </html>

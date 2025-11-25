@@ -16,6 +16,7 @@ h1, p {
   display: inline-block;
   padding: 5px 10px;
   margin: 10px 0;
+  border: 10px solid rgba(255, 255, 255, 0.8);
   color: rgb(3, 48, 16);
 }
 
@@ -66,13 +67,13 @@ h1, p {
 }
 
 #bite-button:hover {
-  background-color: rgb(90, 15, 90);
+  background-color: rgb(92, 65, 57);
 }
 
 
 #output p {
   margin: 8px auto;
-  background: rgba(255,255,255,0.8);
+  background: rgb(223, 185, 185);
   padding: 5px 10px;
   display: inline-block;
 }

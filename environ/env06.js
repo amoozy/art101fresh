@@ -27,10 +27,10 @@ $(document).ready(function () {
 
     const raven = $(this);
 
-    raven.animate(
-      { left: "+=300", top: "-=60", opacity: 0.6 },
-      800
-    );
+   const ravenFlyOut = { left: "+=300", top: "-=60", opacity: 0.6 };
+
+raven.animate(ravenFlyOut, 800);
+
 
     // Return home
     setTimeout(() => {
