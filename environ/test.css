@@ -1,14 +1,77 @@
 
+#wordmark {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: block;
+    max-width: 300px;
+    height: auto;
+}
+
+#wordmark {
+	transition: transform 220ms cubic-bezier(.2,.8,.2,1), filter 220ms ease;
+	will-change: transform, filter;
+}
+
+#wordmark:hover,
+#wordmark:focus {
+	transform: translateY(-6px) scale(1.06);
+	cursor: pointer;
+	outline: none;
+}
+
+
+header { margin: 0; padding: 6px 0 0; text-align: center; }
+
+.preview-wrap {
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+#saveit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+#saveit-link {
+	display: inline-block;
+
+}
+
+#saveit {
+	width: 200px;
+	height: auto;
+	display: block;
+	transition: transform 180ms ease, opacity 180ms ease;
+}
+
+#saveit-link:hover #saveit,
+#saveit-link:focus #saveit {
+	transform: translateY(-3px) scale(1.05);
+	opacity: 0.95;
+}
+
+main#emoji-builder { padding-top: 100px; }
+
+body {
+	background-image: url('images/linedpaper.jpeg');
+	background-size: cover, 14px 14px;
+	background-repeat: no-repeat, repeat;
+	background-position: center top, 0 0;
+}
+
 
 :root {
-	--feature-img-size: 80px; 
-
+	--feature-img-size: 80px;
+}
 
 .feature-display img {
 	width: var(--feature-img-size);
 	height: var(--feature-img-size);
-	object-fit: contain; /* preserve aspect ratio inside the square */
-	display: none; /* only .active will be visible */
+	object-fit: contain; 
+
 }
 
 
@@ -21,6 +84,7 @@
 	width: var(--feature-img-size);
 	height: var(--feature-img-size);
 	object-fit: contain;
+	
 }
 
 .feature-display img[style] {
@@ -31,18 +95,88 @@
 
 .feature-display { display:flex; gap:8px; align-items:center; }
 
-#emoji-preview {
-    position: relative;
-    width: 300px;        /* or any size you like */
-    height: 300px;
-    margin: 0 auto;
+/* Layout: put all feature control groups in a single horizontal row */
+#feature-controls {
+	display: flex;
+	gap: 24px;
+	align-items: flex-start;
+	justify-content: center;
+	flex-wrap: wrap; /* wrap to next row on narrow screens */
+	padding: 16px 8px;
+}
+
+.control-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+	gap: 8px;
+	align-items: center;
+	background: rgba(255,255,255,0.6);
+	padding: 12px 16px;
+	border-radius: 8px;
+	min-width: 160px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 #emoji-preview {
     position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+    width: 260px;
+    height: 220px;
+    margin: 6px auto 0;
+
+}
+
+.control-group h2 {
+	margin: 0;
+	font-size: 1rem;
+	grid-column: 1 / -1; /* span both columns */
+}
+
+.control-group .feature-display {
+	min-height: calc(var(--feature-img-size) + 8px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-column: 1 / -1; /* span both columns */
+}
+
+.control-group .arrow {
+	background: #f3f3f3;
+	border: 1px solid #ddd;
+	padding: 6px 10px;
+	cursor: pointer;
+	border-radius: 6px;
+}
+
+.control-group .left-arrow { grid-column: 1; grid-row: 3; justify-self: end; }
+.control-group .right-arrow { grid-column: 2; grid-row: 3; justify-self: start; }
+
+/* Responsive: stack control groups vertically on small screens */
+@media (max-width: 720px) {
+	#feature-controls {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+		.control-group {
+			width: 100%;
+			display: flex; /* switch to flex on small screens for a compact layout */
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 10px;
+			align-items: center;
+		}
+
+		.control-group h2 {
+			margin-right: 12px;
+		}
+}
+
+#emoji-preview {
+	position: relative;
+	width: 300px;        
+	height: 300px;
+	margin: 6px auto 0; 
 }
 
 .feature-layer {
@@ -51,8 +185,39 @@
     transform: translateX(-50%);
 }
 
-#emoji-face-shape { top: 0; }
-#emoji-eyes       { top: 95px; }   /* adjust this */
-#emoji-nose       { top: 150px; }  /* adjust this */
-#emoji-mouth      { top: 210px; }  /* adjust this */
-;}
+/* Face shape layer: move down so it's visually behind the nose, and make the blob larger */
+#emoji-face-shape { top: -10px; z-index: 10; }
+#emoji-eyes       { top: 60px; z-index: 20; }   /* adjust this */
+#emoji-nose       { top: 120px; z-index: 20; }  /* adjust this */
+#emoji-mouth      { top: 180px; z-index: 20; }  /* adjust this */
+
+
+#emoji-preview #emoji-face-shape img {
+	width: 250px; /* larger than feature size */
+	height: 320px;
+	object-fit: contain;
+	display: block;
+	pointer-events: none; /* avoid intercepting clicks on controls */
+}
+
+/* Upper-right page arrow (decorative) */
+#page-arrow {
+	position: fixed;
+	top: -15px;
+	right: 8px;
+	width: 180px; 
+	height: auto;
+	z-index: 1200; 
+	transition: transform 160ms ease;
+}
+
+#page-arrow:hover,
+#page-arrow:focus {
+	transform: translateY(-4px) scale(1.06);
+}
+
+@media (max-width: 520px) {
+	/* scale down on small screens so it doesn't cover UI */
+	#page-arrow { width: 84px; top: 12px; right: 12px; }
+}
+
