@@ -20,8 +20,46 @@
 	outline: none;
 }
 
+.corner-gif1,
+.corner-gif2,
+.corner-gif3 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
 
-header { margin: 0; padding: 6px 0 0; text-align: center; }
+.corner-gif1 { width: 350px; height: auto; top: 5px; right: 20px; }
+.corner-gif2 { width: 200px; height: auto; top: 60px; right: 100px; }
+.corner-gif3 { width: 200px; height: auto; top: 200px; right: 100px; }
+
+
+.corner-gif1 img,
+.corner-gif2 img,
+.corner-gif3 img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.slug {
+    position: absolute;
+    top: 200px;
+    left: 120px;
+    width: 140px;
+    z-index: 9999;
+}
+
+@media (max-width: 600px) {
+	.corner-gif1 { top: 10px; right: 0; width: 200px; }
+	.corner-gif2 { top: 50px; right: 10px; width: 120px; }
+	.corner-gif3 { top: 110px; right: 10px; width: 120px; }
+}
+header {
+	margin: 0;
+	padding: 6px 0 0;
+	text-align: center;
+}
 
 .preview-wrap {
 	display: flex;
@@ -47,6 +85,7 @@ header { margin: 0; padding: 6px 0 0; text-align: center; }
 	transition: transform 180ms ease, opacity 180ms ease;
 }
 
+
 #saveit-link:hover #saveit,
 #saveit-link:focus #saveit {
 	transform: translateY(-3px) scale(1.05);
@@ -62,7 +101,6 @@ body {
 	background-position: center top, 0 0;
 }
 
-
 :root {
 	--feature-img-size: 80px;
 }
@@ -73,7 +111,6 @@ body {
 	object-fit: contain; 
 
 }
-
 
 .feature-display img.active {
 	display: block;
@@ -95,7 +132,7 @@ body {
 
 .feature-display { display:flex; gap:8px; align-items:center; }
 
-/* Layout: put all feature control groups in a single horizontal row */
+
 #feature-controls {
 	display: flex;
 	gap: 24px;
@@ -151,7 +188,7 @@ body {
 .control-group .left-arrow { grid-column: 1; grid-row: 3; justify-self: end; }
 .control-group .right-arrow { grid-column: 2; grid-row: 3; justify-self: start; }
 
-/* Responsive: stack control groups vertically on small screens */
+
 @media (max-width: 720px) {
 	#feature-controls {
 		flex-direction: column;
@@ -160,7 +197,7 @@ body {
 
 		.control-group {
 			width: 100%;
-			display: flex; /* switch to flex on small screens for a compact layout */
+			display: flex; 
 			flex-direction: row;
 			justify-content: space-between;
 			padding: 10px;
@@ -185,7 +222,7 @@ body {
     transform: translateX(-50%);
 }
 
-/* Face shape layer: move down so it's visually behind the nose, and make the blob larger */
+
 #emoji-face-shape { top: -10px; z-index: 10; }
 #emoji-eyes       { top: 60px; z-index: 20; }   /* adjust this */
 #emoji-nose       { top: 120px; z-index: 20; }  /* adjust this */
@@ -199,25 +236,3 @@ body {
 	display: block;
 	pointer-events: none; /* avoid intercepting clicks on controls */
 }
-
-/* Upper-right page arrow (decorative) */
-#page-arrow {
-	position: fixed;
-	top: -15px;
-	right: 8px;
-	width: 180px; 
-	height: auto;
-	z-index: 1200; 
-	transition: transform 160ms ease;
-}
-
-#page-arrow:hover,
-#page-arrow:focus {
-	transform: translateY(-4px) scale(1.06);
-}
-
-@media (max-width: 520px) {
-	/* scale down on small screens so it doesn't cover UI */
-	#page-arrow { width: 84px; top: 12px; right: 12px; }
-}
-

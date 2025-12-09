@@ -9,7 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="test.css" />
 
-    <!-- jQuery (LOAD THIS BEFORE ANY SCRIPT THAT USES IT) -->
+    <!-- jQuery-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="test.js" defer></script>
 
@@ -17,17 +17,27 @@
 </head>
 
 <body>
+    <div class="corner-gif1">
+    <img src="images/xpress.gif" alt="">
+    </div>
+
+    <div class="corner-gif2">
+    <img src="images/arrow.gif" alt="">
+</div>
+
+        <div class="corner-gif3">
+            <img src="images/slug.gif" alt="Slug">
+        </div>
+
 <script>
     $(document).ready(function () {
     $("body").css("display", "none").fadeIn(500);
     });
  </script>
+
     <header>
         <img src="images/wordmark.png" id="wordmark" alt="Wordmark">
     </header>
-
-    <!-- Decorative arrow -->
-    <img id="page-arrow" src="images/arrow.gif" alt="Decorative arrow" aria-hidden="true">
 
     <main id="emoji-builder">
 
@@ -103,9 +113,13 @@
             </div>
 
         </section>
+
+
+    <!-- slug removed -->
+
     </main>
 
-    <!-- Your JavaScript (LOADS LAST → SAFE) -->
+    <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
 

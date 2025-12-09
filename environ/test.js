@@ -71,10 +71,7 @@ function setupBlobCycler() {
         const src = `https://blobcdn.com/blob.svg?seed=myblob${index}`;
         blobImg.src = src;
 
-        // Random hue rotation
-        currentHue = Math.floor(Math.random() * 360);
-
-        // Apply hue-rotate to both previews
+        // Apply current hue to both previews
         blobImg.style.filter = `hue-rotate(${currentHue}deg)`;
         layer.innerHTML = `<img src="${src}" alt="face-shape" style="filter:hue-rotate(${currentHue}deg)">`;
     }
@@ -94,23 +91,21 @@ function setupBlobCycler() {
         update();
     });
 
+    // Randomize color independently
+    function randomizeColor() {
+        currentHue = Math.floor(Math.random() * 360);
+        update();
+    }
+
+    // Attach randomizeColor to the button
+    const colorBtn = document.getElementById('saveit-link');
+    colorBtn.addEventListener('click', e => {
+        stop(e);
+        randomizeColor();
+    });
+
     update();
 }
-
-// ----------------------------------------------------
-// SAVE BUTTON (PNG EXPORT)
-// ----------------------------------------------------
-document.getElementById('saveit-link').addEventListener('click', e => {
-    stop(e);
-    const preview = document.getElementById('emoji-preview');
-
-    html2canvas(preview, { backgroundColor: null, scale: 2, useCORS: true }).then(canvas => {
-        const a = document.createElement('a');
-        a.download = 'emoji.png';
-        a.href = canvas.toDataURL('image/png');
-        a.click();
-    });
-});
 
 // ----------------------------------------------------
 // Initialize all features
